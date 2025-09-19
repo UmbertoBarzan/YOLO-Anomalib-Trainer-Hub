@@ -1,0 +1,85 @@
+######################
+## 	    YOLOv5	      ##
+######################
+- model: YOLOv5
+  name: yolo5
+  iterations: 1
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  disabled: true
+
+######################
+## 	  YOLOv6        ##  da cercare download
+######################
+- model: YOLOv6
+  name: yolo6
+  iterations: 1
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  model_params: {
+  }
+  disabled: true
+
+######################
+## 	  YOLOv7        ##  da cercare download
+######################
+- model: YOLOv7
+  name: yolo7
+  iterations: 1
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  model_params: {
+  }
+  disabled: true
+######################
+## 	  YOLOv8        ##
+######################
+- model: YOLOv8
+  name: yolo8
+  iterations: 1
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  model_params: {
+  }
+  disabled: true
+###################### 
+## 	   YOLOv10      ##
+######################
+- model: YOLOv10
+  name: yolo10
+  iterations: 1
+  train_batch_size: 32
+  epochs: 50
+  size: 256
+  model_params: {
+  }
+  disabled: true
+######################
+## 	  YOLOv11       ##
+######################
+- model: YOLOv11
+  name: yolo11
+  iterations: 1
+  train_batch_size: 32
+  epochs: 50
+  size: 600
+  model_params: {
+  }
+  disabled: false
+
+######################
+## 	  YOLOv12       ##
+######################
+- model: YOLOv12
+  name: yolo12
+  iterations: 1
+  train_batch_size: 32
+  epochs: 50
+  size: 256
+  model_params: {
+  }
+  disabled: true

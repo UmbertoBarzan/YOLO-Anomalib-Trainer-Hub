@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+logs/
+models/
+datasets/
+job_data/
+raw_images/
+generated_yolo/
+miniconda3/
+Miniconda3-latest-Linux-x86_64.sh
+*.log

@@ -1,0 +1,125 @@
+######################
+## 	  PATCHCORE	    ##
+######################
+- model: Patchcore
+  name: patchcore_256
+  iterations: 2
+  train_batch_size: 16
+  epochs: 1
+  size: 256
+  model_params: {
+  }
+  disabled: true
+  
+- model: Patchcore
+  name: patchcore_256_3_neighbors
+  iterations: 2
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  model_params: { num_neighbors: 3 }
+  disabled: true
+
+- model: Patchcore
+  name: patchcore_256_1_neighbors
+  iterations: 2
+  train_batch_size: 32
+  epochs: 1
+  size: 256
+  model_params: { num_neighbors: 1 }
+  disabled: true
+
+- model: Patchcore
+  name: patchcore_512
+  iterations: 2
+  train_batch_size: 32
+  epochs: 1
+  size: 512
+  model_params: {}
+  disabled: true
+######################
+## 	  	PADIM		    ##
+######################
+- model: Padim
+  name: padim_256
+  iterations: 1
+  train_batch_size: 64
+  epochs: 1
+  size: 256
+  model_params: {
+    
+  }
+  disabled: true
+
+- model: Padim
+  name: padim_512
+  iterations: 2
+  train_batch_size: 32
+  epochs: 1
+  size: 512
+  model_params: {
+  
+  }
+  disabled: false
+######################
+## 	  	  CFA		    ##
+######################
+- model: Cfa
+  name: cfa_256
+  iterations: 1
+  train_batch_size: 32
+  epochs: 30
+  size: 256
+  model_params: {}
+  disabled: true
+######################
+## 	   ReversD	    ##
+######################
+- model: ReverseDistillation
+  name: reverse_distillation_256
+  iterations: 1
+  train_batch_size: 32
+  epochs: 80
+  size: 256
+  model_params: {}
+  disabled: true
+######################
+## 	   Dream  	    ##
+######################
+- model: Draem
+  name: draem_256
+  iterations: 1
+  train_batch_size: 128
+  epochs: 1500
+  size: 512
+  optimizer: Adam
+  model_params: {
+    
+  }
+  disabled: True
+
+- model: Dream
+  name: dream_256_mod
+  iterations: 1
+  train_batch_size: 8
+  epochs: 300
+  size: 256
+  #learning_rate: 0.0001 -> error
+  #optimazer: Adam
+  #augmentation: true -> error
+  model_params: {
+    
+  }
+  disabled: true
+######################
+## 	   EffAd  	    ##
+######################
+- model: EfficientAd
+  name: efficient_ad_256
+  iterations: 1
+  train_batch_size: 1
+  epochs: 200
+  steps: 70000 #from paper 70000
+  size: 256
+  model_params: {}
+  disabled: True

@@ -1,0 +1,6 @@
+paths:
+  datasets_dir: datasets
+  generated_yolo: generated_yolo
+  yolo_jobs: configs/yolo_jobs.yaml
+  anomalib_jobs: configs/anomalib_jobs.yaml
+  raw_images: raw_images
