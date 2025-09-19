@@ -81,9 +81,9 @@ Returns queued and running job counts:
 - YOLO data yaml files produced in `generated_yolo/`
 
 ## Known Gaps
-- `engine/data_preparer.py` does not yet generate YOLO label files; adjust if your workflow requires bounding boxes.
+- The YOLO fallback that fabricates full-image boxes for label-only samples should be replaced with real bounding boxes for meaningful training.
 - Default YAML templates assume two classes (`normal`, `anomaly`). Update metadata or configs for other setups.
-- Ultralytics writes settings under `~/.config/Ultralytics`; ensure that path is writable in your environment.
+- Ultralytics writes settings under `generated_yolo/ultralytics_settings.json`; override `ULTRALYTICS_SETTINGS` if you prefer a different location.
 
 ## Development Tips
 - Use `conda run -n yoloanomalibhub python ...` for scripted commands without activating the environment globally.
