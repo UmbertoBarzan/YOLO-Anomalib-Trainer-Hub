@@ -70,9 +70,10 @@ Returns queued and running job counts:
 ```
 
 ## Dataset Preparation
-- Place source JPEGs in `raw_images/` named `<uuid>.jpg` to match the UUIDs in the JSON payload.
-- `engine/data_preparer.py` copies images into per-job folders under `datasets/job_<training_id>/` and generates basic configs.
-- Missing images currently create empty placeholder files; replace or adjust the preparer if you want stricter validation.
+- Place source images in `raw_images/` using the same UUID and extension reported in the job payload (e.g. `raw_images/<uuid>.jpg`).
+- Each dataset item must declare at least a `uuid`, optional `split` (`train` | `val` | `test`) and, for Anomalib, a `compliance` flag (`0` good, `1` anomaly, anything else uncertain). Non-normal samples are automatically moved out of the training split.
+- For YOLO jobs provide `annotations` with `class_id` and `bbox` (centre-based `cxcywh`). Bboxes can be normalised or absolute (image size is read at runtime). If only a class label is given, a full-image bounding box is used as a fallback.
+- Missing raw images now raise a descriptive error instead of generating empty placeholders, so ingest failures surface immediately.
 
 ## Outputs
 - Training checkpoints saved under `models/<run_name>/`
