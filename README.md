@@ -17,19 +17,19 @@ This repository hosts a small web service that queues and executes computer visi
 ## Quick Start
 
 ```bash
-# 1. Create the conda environment
-conda env create -f environment.yml
-# (or `conda env update --file environment.yml --prune` to refresh an existing env)
+# 1. Create the conda environment (CPU-only Torch)
+PIP_EXTRA_INDEX_URL=https://download.pytorch.org/whl/cpu conda env create -f environment.yml
+# (or `PIP_EXTRA_INDEX_URL=... conda env update --file environment.yml --prune` to refresh an existing env)
 
 # 2. Activate the environment
-conda activate anomalib
+conda activate yoloanomalibhub
 
 # 3. Launch the API server
 python main.py
 # Server listens on http://0.0.0.0:5000
 ```
 
-> Note: the provided `environment.yml` sets `PIP_EXTRA_INDEX_URL` so pip can fetch CPU-only Torch wheels from download.pytorch.org.
+> Note: `environment.yml` stores `PIP_EXTRA_INDEX_URL` so pip keeps using the CPU Torch wheels after activation, but you must also set the variable when running `conda env create` as shown above.
 
 ## API
 
@@ -85,6 +85,6 @@ Returns queued and running job counts:
 - Ultralytics writes settings under `~/.config/Ultralytics`; ensure that path is writable in your environment.
 
 ## Development Tips
-- Use `conda run -n anomalib python ...` for scripted commands without activating the environment globally.
+- Use `conda run -n yoloanomalibhub python ...` for scripted commands without activating the environment globally.
 - Keep `configs/global.yaml` in sync with your storage layout.
 - Export an updated `environment.yml` after adding dependencies (`conda env export --from-history > environment.yml`).
